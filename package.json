@@ -1,0 +1,24 @@
+{
+  "name": "cse-341-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./cse341-node/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edwardsja/CSE-341-nodejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edwardsja/CSE-341-nodejs/issues"
+  },
+  "homepage": "https://github.com/edwardsja/CSE-341-nodejs#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12"
+  }
+}
