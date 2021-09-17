@@ -1,0 +1,26 @@
+After completing the assignment, be sure to push to Github. You do not have to worry about pushing to Heroku this lesson.
+Please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your source code repository (e.g., GitHub):
+    https://github.com/edwardsja/CSE-341-nodejs
+
+2. Briefly list and describe the elements of the application that are functioning. 
+    All 3 routes are handled
+    The new user is added to the console log and the list is updated at /users
+
+3. Briefly describe any pieces of the assignment that are not yet working correctly.
+    None
+
+4. Briefly describe the "coolest" thing you learned while completing this assignment.
+    I utilized a global variable to keep track of the users list. I don't know if there is 
+    any scenario that it can be realisticly used, but it was interesting to learn that it exists.
+
+5. If you could change this assignment to be more effective or helpful, what would you change?
+    Nothing
+
+6. Please select the category you feel best describes your assignment:
+   5 - Shows creativity and excels above and beyond requirements
+
+7. Provide a brief justification (1-2 sentences) for selecting that category.
+    I completed all required tasks, while also updating the /users list using something that had not 
+    known about previously. This required further research to successfully complete the task.
