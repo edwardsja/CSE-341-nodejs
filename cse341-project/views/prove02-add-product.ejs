@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('includes/head.ejs') %>
+</head>
+<body>
+    <header>
+        <%- include('includes/nav.ejs')  %> 
+    </header>
+    <%- include('includes/pageTitle.ejs') %> 
+    <main>
+        <form action="/week2/admin/add-product" method="POST" class="container w-50">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" name="title" class="form-control" id="title" aria-describedby="title">
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Price</label>
+                <input type="number" name="price" class="form-control" id="price" aria-describedby="price" step="0.01">
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Item Description</label>
+                <textarea name="description" class="form-control" id="description" aria-describedby="description"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Image Link</label>
+                <input type="text" name="image" class="form-control" id="image" aria-describedby="image">
+            </div>
+            <button type="submit" class="btn btn-primary">Add Product</button>
+        </form>
+        
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+</body>
+</html>

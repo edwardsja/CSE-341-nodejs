@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('includes/head.ejs') %>
+</head>
+<body>
+    <header>
+        <%- include('includes/nav.ejs')  %> 
+    </header>
+    <%- include('includes/pageTitle.ejs') %> 
+
+    <main>
+        <% if (prods.length > 0) { %>
+          <div class="container d-flex flex-wrap">
+            <% let i = 0 %> 
+            <% for (let product of prods) { %>
+                <div class="card col-3 flex-grow-4 ms-auto me-auto mb-4" style="width: 18rem;">
+                    <img src="<%= product.image %>" class="card-img-top" alt="image of book">
+                    <div class="card-body pt-auto pb-auto">
+                      <h5 class="card-title"><%= product.title %> </h5>
+                      <p class="card-text"><%= product.description %></p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">$<%= product.price %></li>
+                    </ul>
+                    <div class="card-body">
+                      <!-- <a href="#" class="card-link">Edit Product</a> -->
+                      <form action="/week2/admin/delete-product" method="POST">
+                        <input type="hidden" name="arrayNumber" value="<%= i %>">
+                        <button type="submit" class="btn btn-primary">Delete Product</button>
+                      </form>
+                    </div>
+                  </div>
+                  <% i++ %> 
+            <% } %>
+          </div>
+        <% } else { %>
+            <h1>No Products Found</h1>
+        <% } %>
+        
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+</body>
+</html>
