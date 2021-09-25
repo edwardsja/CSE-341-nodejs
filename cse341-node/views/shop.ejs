@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('includes/head.ejs') %>
+<body>
+    <header>
+        <%- include('includes/nav.ejs')  %> 
+    </header>
+
+    <main>
+        <% if (prods.length > 0) { %>
+            <% for (let product of prods) { %>
+                <div class="card" style="width: 18rem;">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPdpChrH_9g7tboh5xJYQIMUUmBjTLlwluPw&usqp=CAU" class="card-img-top" alt="image of book">
+                    <div class="card-body">
+                      <h5 class="card-title"><%= product.title %> </h5>
+                      <p class="card-text">Book desciption text</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">$19.99</li>
+                    </ul>
+                    <div class="card-body">
+                      <a href="#" class="card-link">Card link</a>
+                      <a href="#" class="card-link">Another link</a>
+                    </div>
+                  </div>
+            <% } %>
+        <% } else { %>
+            <h1>No Products Found</h1>
+        <% } %>
+        
+    </main>
+</body>
+</html>

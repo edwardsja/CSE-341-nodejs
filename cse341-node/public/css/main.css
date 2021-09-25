@@ -1,0 +1,15 @@
+header ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header ul li {
+  list-style: none;
+}
+
+header ul li a {
+  padding: 15px;
+  border: 1px black solid;
+}
+/*# sourceMappingURL=main.css.map */

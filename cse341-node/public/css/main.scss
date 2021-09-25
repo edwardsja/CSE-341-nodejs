@@ -1,0 +1,10 @@
+header ul {
+    display: flex;
+    li {
+        list-style: none;
+        a {
+        padding: 15px;
+        border: 1px black solid;
+        }
+    }
+}
