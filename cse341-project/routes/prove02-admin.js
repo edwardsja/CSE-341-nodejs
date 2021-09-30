@@ -11,7 +11,7 @@ const products = [{title: 'New Product', price: 19.99, description: 'This is a n
 
 router.get('/add-product', (req, res, next) => {
     res.render('prove02-add-product', {
-        title: 'Add Product',
+        pageTitle: 'Add Product',
         path: '/week2/admin/add-product',
     });
 });

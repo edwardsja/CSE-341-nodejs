@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include('includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/ta03.css">
+</head>
+
+<body>
+    <header>
+        <%- include('includes/navigation.ejs')  %> 
+    </header>
+    <%- include('includes/pageTitle.ejs') %> 
+    <main class="container-md">
+        <div class="w-50">
+            <form action="/week3/ta03/search" method="post">
+                <div class="input-group mb-3">
+                    <button class="btn btn-primary" type="submit">Filter By Tag</button>
+                    <select class="form-select" id="selectedTag" name="selectedTag">
+                        <option selected>Select Tag</option>
+                        
+                        <% for(let i = 0; i < tags.length; i++) { %>
+                            <option value="<%= tags[i] %>"><%= tags[i] %></option>
+                        <% } %>
+                    </select>
+                </div>
+            </form>
+        </div>
+        <div class="grid-container">
+            <% for(card of cards) { %>
+                <% if (selectedTag) { %>
+                    
+                <% } %>
+                <div class="card bg-light ms-auto me-auto" style="width: 18rem;">
+                    <img src="<%= card.imageUrl %>" class="card-img-top" alt="<%= card.title %>">
+                    <div class="card-body">
+                      <h5 class="card-title"><%= card.title %></h5>
+                      <p class="card-text"><%= card.description %></p>
+                    </div>
+                    <ul class="list-group list-group-flush bg-primary">
+                      <li class="list-group-item fs-3 bg-primary" style="color: white;">$<%= card.price %></li>
+                    </ul>
+                    <div style="padding: 8px 16px">
+                        <ul class="card-text list-group d-flex flex-row list-unstyled">
+                            <% card.tags.forEach(tag => { %>
+                                <li><%= tag %><% if (card.tags.indexOf(tag) !== (card.tags.length - 1)) { %>,&nbsp;<% } %></li>
+                            <% }) %>
+                        </ul>
+                    </div>
+                  </div>
+            <% } %>
+        </div>
+    </main>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+  
+</body>
+
+</html>

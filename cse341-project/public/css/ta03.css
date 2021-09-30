@@ -1,0 +1,14 @@
+.grid-container {
+  width: 100%;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 20px;
+  text-align: center;
+  margin-top: 1rem;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: masonry;
+      grid-template-rows: masonry;
+}
+/*# sourceMappingURL=ta03.css.map */

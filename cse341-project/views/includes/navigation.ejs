@@ -1,0 +1,26 @@
+<nav class="bg-light">
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a class="nav-link <%= path === '/' ? 'active' : ''%>" href="/">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle <%= path.includes('/week2') ? 'active' : ''%>" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Week 2</a>
+          <ul class="dropdown-menu bg-light">
+            <li><a class="dropdown-item <%= path === '/week2' ? 'active' : ''%>" href="/week2">Shop</a></li>
+            <li><a class="dropdown-item <%= path === '/week2/admin/add-product' ? 'active' : ''%>" href="/week2/admin/add-product">Add Product</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle <%= path.includes('/week3') ? 'active' : ''%>" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Week 3</a>
+          <ul class="dropdown-menu bg-light">
+            <li><a class="dropdown-item <%= path === '/week3/ta03' ? 'active' : ''%>" href="/week3/ta03">Team Activity 03</a></li>
+            <li><a class="dropdown-item <%= path === '/week3' ? 'active' : ''%>" href="/week3">Home</a></li>
+            <li><a class="dropdown-item <%= path === '/week3/products' ? 'active' : ''%>" href="/week3/products">Products</a></li>
+            <li><a class="dropdown-item <%= path === '/week3/cart' ? 'active' : ''%>" href="/week3/cart">Cart</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item <%= path === '/week3/admin/products' ? 'active' : ''%>" href="/week3/admin/products">Admin Products</a></li>
+            <li><a class="dropdown-item <%= path === '/week3/admin/add-product' ? 'active' : ''%>" href="/week3/admin/add-product">Add Product</a></li>
+          </ul>
+        </li>
+      </ul>
+</nav>

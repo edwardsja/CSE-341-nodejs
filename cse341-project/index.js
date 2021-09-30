@@ -27,6 +27,8 @@ const w2_shopRoutes = require('./routes/prove02-shop');
 
 // week 3
 const ta03Routes = require('./routes/ta03');
+const w3_adminRoutes = require('./routes/prove03-admin');
+const w3_shopRoutes = require('./routes/prove03-shop');
 
 // week 4
 const ta04Routes = require('./routes/ta04');
@@ -42,17 +44,19 @@ app
   .use('/ta02', ta02Routes)
   .use('/week2', w2_shopRoutes)
   .use('/week2/admin', w2_adminData.routes)
-  .use('/ta03', ta03Routes)
+  .use('/week3', w3_shopRoutes)
+  .use('/week3/admin', w3_adminRoutes)
+  .use('/week3/ta03', ta03Routes)
   .use('/ta04', ta04Routes)
   .get('/', (req, res, next) => {
     // This is the primary index, always handled last.
     res.render('index', {
-      title: 'Welcome to my CSE341 repo',
+      pageTitle: 'Aaron Edwards\' CSE341 Repo',
       path: '/',
     });
   })
   .use((req, res, next) => {
     // 404 page
-    res.render('404', { title: '404 - Page Not Found', path: req.url });
+    res.render('404', { pageTitle: '404 - Page Not Found', path: req.url });
   })
   .listen(process.env.PORT || 5000, () => console.log(`Listening on ${PORT}`));

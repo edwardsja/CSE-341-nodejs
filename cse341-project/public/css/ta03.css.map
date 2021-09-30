@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,eAAe,CAAC;EACZ,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,MAAM;EACd,OAAO,EAAE,IAAI;EACb,QAAQ,EAAE,IAAI;EACd,UAAU,EAAE,MAAM;EAClB,UAAU,EAAE,IAAI;EAChB,qBAAqB,EAAE,cAAc;EACrC,kBAAkB,EAAE,OAAO;CAC9B",
+    "sources": [
+        "ta03.scss"
+    ],
+    "names": [],
+    "file": "ta03.css"
+}

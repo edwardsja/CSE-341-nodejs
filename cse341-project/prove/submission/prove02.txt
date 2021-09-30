@@ -1,20 +1,28 @@
 1. Copy and paste the URL for your web application (e.g., Heroku):
+   https://cse341-project-aaronedwards.herokuapp.com/
 
 2. Copy and paste the URL for your source code repository (e.g., GitHub):
+   https://github.com/edwardsja/CSE-341-nodejs
 
 3. Briefly list and describe the elements of the application that are functioning. 
+   Express and EJS fully implemented
+   User can input title, description, price, and image URL
+   Shop page and add-product page are working and styled well
+   User can delete a product on the shop page
 
 4. Briefly describe any pieces of the assignment that are not yet working correctly.
+   Everything is working
 
 5. Briefly describe the "coolest" thing you learned while completing this assignment.
+   The whole thing. Being able to build a working website, with some simple functionality 
+   in a couple of hours is amazing to me.
 
 6. If you could change this assignment to be more effective or helpful, what would you change?
+   No changes
 
 7. Please select the category you feel best describes your assignment:
-   1 - Some attempt was made
-   2 - Developing, but significantly deficient
-   3 - Slightly deficient, but still mostly adequate
-   4 - Meets requirements
    5 - Shows creativity and excels above and beyond requirements
 
 8. Provide a brief justification (1-2 sentences) for selecting that category.
+   I included all requirements, plus added multiple more fields for the user to input, 
+   as well as allowing the user to delete specific products

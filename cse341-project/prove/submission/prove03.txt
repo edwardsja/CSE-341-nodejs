@@ -1,0 +1,30 @@
+Please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your web application (e.g., Heroku):
+    https://cse341-project-aaronedwards.herokuapp.com
+
+2. Copy and paste the URL for your source code repository (e.g., GitHub):
+    https://github.com/edwardsja/CSE-341-nodejs
+
+3. Briefly list and describe the elements of the application that are functioning. 
+    MVC, with a good amount of JSON data across 2 files
+    JSON data pulled from files and displayed in an appealing style
+    Dynamic routes used for product detail and updating product
+    Adding and deleting items to a cart
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+    None
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+    Knowing how to build urls is interesting, and now that I know, I can understand what I am looking at 
+    while on other sites and see what kind of information they are using in the url
+
+6. If you could change this assignment to be more effective or helpful, what would you change?
+    No change
+
+7. Please select the category you feel best describes your assignment:
+   5 - Shows creativity and excels above and beyond requirements
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+    App is visually appealing, with cart functionality, product detail page, and updating a product.
+    Dynamic routes are used in 2 places, and JSON files are used to save product and cart info

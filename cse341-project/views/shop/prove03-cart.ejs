@@ -1,0 +1,29 @@
+<%- include('../includes/head.ejs') %>
+    </head>
+
+    <body>
+        <header>
+            <%- include('../includes/navigation.ejs') %>
+            <%- include('../includes/pageTitle.ejs') %> 
+        </header>
+        <main class="container w-25">
+            <% if (products.length > 0) { %>
+                <ul>
+                    <% products.forEach(p => { %>
+                        <li class="card d-flex flex-row justify-content-between mb-5">
+                            <div class="container w-50 align-self-start ms-0"><img class="img-thumbnail" style="border: none !important;" src="<%= p.productData.imageUrl %>" alt="<%= p.productData.title %>"></div>
+                            <div class="pb-3 pe-5 align-self-end">
+                                <p class="align-self-end"><%= p.productData.title %> (<%= p.qty %>)</p>
+                                <form action="/week3/cart-delete-item" method="POST">
+                                    <button class="btn btn-primary" type="submit">Delete</button>
+                                    <input type="hidden" name="productId" value="<%= p.productData.id %>">
+                                </form>
+                            </div>
+                        </li>
+                    <% }) %> 
+                </ul>
+            <% } else { %>
+                <h1>No products in cart!</h1>
+            <% } %> 
+        </main>
+        <%- include('../includes/end.ejs') %>

@@ -1,23 +1,26 @@
 const path = require('path');
 
 const express = require('express');
-//const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
+
+const errorController = require('./controllers/error');
 
 const app = express();
 
 app.set('view engine', 'ejs');
-app.set('views', './cse341-node/views');
+app.set('views', path.join(__dirname, 'views'));
 
-const adminData = require('./routes/admin');
+const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 
-app.use(express.urlencoded({extended: true}))
-    .use(express.json())
-    .use(express.static(path.join(__dirname, 'public')))
-    .use('/admin', adminData.routes)
-    .use(shopRoutes)
-    .use((req, res, next) => {
-        res.status(404).render('404', { title: 'Page Not Found' });
-    })
-    .listen(3000);
- 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/admin', adminRoutes);
+app.use(shopRoutes);
+
+app.use(errorController.get404);
+
+app.listen(3000);
+
+console.log('Node running on port 3000')

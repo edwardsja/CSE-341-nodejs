@@ -13,7 +13,7 @@ router.get('/', (req, res, next) => {
     const products = adminData.products;
     res.render('prove02-shop', {
         prods: products,
-        title: 'Shop',
+        pageTitle: 'Shop',
         path: '/week2'
     })
 });
