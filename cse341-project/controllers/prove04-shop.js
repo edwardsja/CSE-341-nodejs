@@ -1,13 +1,13 @@
-const Product = require('../models/product');
-const Order = require('../models/order');
+const Product = require('../models/prove04-product');
+const Order = require('../models/prove04-order');
 
 exports.getProducts = (req, res, next) => {
   Product.find()
     .then(products => {
-      res.render('shop/product-list', {
+      res.render('shop/prove04-product-list', {
         prods: products,
         pageTitle: 'All Products',
-        path: '/products'
+        path: '/week4/products'
       });
     });
 };
@@ -16,7 +16,7 @@ exports.getProduct = (req, res, next) => {
   const prodId = req.params.productId;
   Product.findById(prodId)
     .then(product => {
-      res.render('shop/product-detail', {product: product, pageTitle: product.title, path: '/products'})
+      res.render('shop/prove04-product-detail', {product: product, pageTitle: product.title, path: '/week4/products'})
     })
     .catch(err => {
       console.log(err);
@@ -26,10 +26,10 @@ exports.getProduct = (req, res, next) => {
 exports.getIndex = (req, res, next) => {
   Product.find()
     .then(products => {
-      res.render('shop/index', {
+      res.render('shop/prove04-index', {
         prods: products,
         pageTitle: 'Shop',
-        path: '/'
+        path: '/week4'
       });
     });
 };
@@ -39,8 +39,8 @@ exports.getCart = (req, res, next) => {
   .populate('cart.items.productId')
   .then(user => {
     const products = user.cart.items;
-    res.render('shop/cart', {
-      path: '/cart',
+    res.render('shop/prove04-cart', {
+      path: '/week4/cart',
       pageTitle: 'Your Cart',
       products: products
     });
@@ -53,7 +53,7 @@ exports.postCart = (req, res, next) => {
   Product.findById(prodId).then(product => {
     return req.user.addToCart(product);
   }).then(result => {
-    res.redirect('/cart');
+    res.redirect('/week4/cart');
   });
 }
 
@@ -61,7 +61,7 @@ exports.postCartDeleteProduct = (req, res, next) => {
   const prodId = req.body.productId;
   req.user.removeFromCart(prodId)
     .then(result => {
-      res.redirect('/cart');
+      res.redirect('/week4/cart');
     });
 }
 
@@ -85,7 +85,7 @@ exports.postOrder = (req, res, next) => {
     req.user.clearCart();
   })
   .then(result => {
-    res.redirect('/orders');
+    res.redirect('/week4/orders');
   })
   .catch(err => {
     console.log(err);
@@ -95,8 +95,8 @@ exports.postOrder = (req, res, next) => {
 exports.getOrders = (req, res, next) => {
   Order.find({ 'user.userId': req.user._id })
     .then(orders => {
-      res.render('shop/orders', {
-        path: '/orders',
+      res.render('shop/prove04-orders', {
+        path: '/week4/orders',
         pageTitle: 'Your Orders',
         orders: orders
       });
@@ -104,8 +104,8 @@ exports.getOrders = (req, res, next) => {
 };
 
 exports.getCheckout = (req, res, next) => {
-  res.render('shop/checkout', {
-    path: '/checkout',
+  res.render('shop/prove04-checkout', {
+    path: '/week4/checkout',
     pageTitle: 'Checkout'
   });
 };

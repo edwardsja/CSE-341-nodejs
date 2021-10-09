@@ -22,5 +22,19 @@
             <li><a class="dropdown-item <%= path === '/week3/admin/add-product' ? 'active' : ''%>" href="/week3/admin/add-product">Add Product</a></li>
           </ul>
         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle <%= path.includes('/week4') ? 'active' : ''%>" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Week 4</a>
+          <ul class="dropdown-menu bg-light">
+            <li><a class="dropdown-item <%= path === '/week4/ta04' ? 'active' : ''%>" href="/week4/ta04">Team Activity 04</a></li>
+            <li><a class="dropdown-item <%= path === '/week4' ? 'active' : ''%>" href="/week4">Home</a></li>
+            <li><a class="dropdown-item <%= path === '/week4/products' ? 'active' : ''%>" href="/week4/products">Products</a></li>
+            <li><a class="dropdown-item <%= path === '/week4/cart' ? 'active' : ''%>" href="/week4/cart">Cart</a></li>
+            <li><a class="dropdown-item <%= path === '/week4/orders' ? 'active' : ''%>" href="/week4/orders">Orders</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item <%= path === '/week4/admin/products' ? 'active' : ''%>" href="/week4/admin/products">Admin Products</a></li>
+            <li><a class="dropdown-item <%= path === '/week4/admin/add-product' ? 'active' : ''%>" href="/week4/admin/add-product">Add Product</a></li>
+          </ul>
+        </li>
+
       </ul>
 </nav>
