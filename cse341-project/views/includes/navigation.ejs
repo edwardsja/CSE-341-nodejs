@@ -35,6 +35,27 @@
             <li><a class="dropdown-item <%= path === '/week4/admin/add-product' ? 'active' : ''%>" href="/week4/admin/add-product">Add Product</a></li>
           </ul>
         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle <%= path.includes('/week5') ? 'active' : ''%>" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Week 5</a>
+          <ul class="dropdown-menu bg-light">
+            <!-- <li><a class="dropdown-item <%= path === '/week5/ta04' ? 'active' : ''%>" href="/week5/ta05">Team Activity 05</a></li> -->
+            <li><a class="dropdown-item <%= path === '/week5' ? 'active' : ''%>" href="/week5">Home</a></li>
+            <li><a class="dropdown-item <%= path === '/week5/products' ? 'active' : ''%>" href="/week5/products">Products</a></li>
+            <li><a class="dropdown-item <%= path === '/week5/cart' ? 'active' : ''%>" href="/week5/cart">Cart</a></li>
+            <li><a class="dropdown-item <%= path === '/week5/orders' ? 'active' : ''%>" href="/week5/orders">Orders</a></li>
+            <% if (!isAuthenticated) { %>
+              <li><a class="dropdown-item <%= path === '/week5/login' ? 'active' : ''%>" href="/week5/login">Login</a></li>
+              <li><a class="dropdown-item <%= path === '/week5/signup' ? 'active' : ''%>" href="/week5/signup">Signup</a></li>
+            <% } else { %>
+              <li><a class="dropdown-item <%= path === '/week5/logout' ? 'active' : ''%>" href="/week5/logout">Logout</a></li>
+            <% } %> 
+            <% if (isAuthenticated) { %>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item <%= path === '/week5/admin/products' ? 'active' : ''%>" href="/week5/admin/products">Admin Products</a></li>
+            <li><a class="dropdown-item <%= path === '/week5/admin/add-product' ? 'active' : ''%>" href="/week5/admin/add-product">Add Product</a></li>
+            <% } %> 
+          </ul>
+        </li>
 
       </ul>
 </nav>

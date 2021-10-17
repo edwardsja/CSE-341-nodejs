@@ -1,0 +1,29 @@
+Please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your web application (e.g., Heroku):
+    https://cse341-project-aaronedwards.herokuapp.com
+
+2. Copy and paste the URL for your source code repository (e.g., GitHub):
+    https://github.com/edwardsja/CSE-341-nodejs
+
+3. Briefly list and describe the elements of the application that are functioning. 
+    Authentication, with error messages
+    views and nav bar are dynamic based on user permissions
+    Protection against CSRF attacks, plus route protection
+    User information is stored in the database and password is encrypted
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+    None
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+    Learning how to send emails through our app was really cool.
+
+6. If you could change this assignment to be more effective or helpful, what would you change?
+    No change
+
+7. Please select the category you feel best describes your assignment:
+   5 - Shows creativity and excels above and beyond requirements
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+    App is visually appealing, with protection against attacks. Information is stored in database, 
+    with password encrypted, plus admin and post routes are hidden if user is not logged in.

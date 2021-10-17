@@ -2,8 +2,8 @@ const path = require('path');
 
 const express = require('express');
 
-const adminController = require('../controllers/admin');
-const isAuth = require('../middleware/is-auth');
+const adminController = require('../controllers/prove05-admin');
+const isAuth = require('../middleware/prove05-is-auth');
 
 const router = express.Router();
 

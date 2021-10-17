@@ -1,0 +1,35 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/product.css">
+    </head>
+
+    <body>
+        <header>
+            <%- include('../includes/navigation.ejs') %>
+            <%- include('../includes/pageTitle.ejs') %> 
+        </header>
+
+            <main>
+                <% if (prods.length > 0) { %>
+                    <div class="container d-flex flex-wrap">
+                        <% for (let product of prods) { %>
+                            <div class="card col-3 flex-grow-4 ms-auto me-auto mb-4">
+                                <img src="<%= product.imageUrl %>" class="card-img-top" alt="<%= product.title %>">
+                                <div class="card-body pt-auto pb-auto">
+                                    <h5 class="card-title"><%= product.title %> </h5>
+                                    <p class="card-text"><%= product.description %></p>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">$<%= product.price %></li>
+                                </ul>
+                                <div class="d-flex flex-row justify-content-evenly" style="padding: 8px;">
+                                    <a href="/week5/products/<%= product.id %> " class="btn btn-primary">Details</a>
+                                    <%- include('../includes/prove04-add-to-cart.ejs', {product: product}) %> 
+                                </div>
+                            </div>
+                            <% } %>
+                    </div>
+                    <% } else { %>
+                        <h1>No Products Found!</h1>
+                        <% } %>
+            </main>
+            <%- include('../includes/end.ejs') %>

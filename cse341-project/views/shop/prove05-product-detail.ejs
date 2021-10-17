@@ -1,0 +1,24 @@
+<%- include('../includes/head.ejs') %>
+    </head>
+
+    <body>
+        <header>
+            <%- include('../includes/navigation.ejs') %>
+            <%- include('../includes/pageTitle.ejs') %> 
+        </header>
+        <main class="container">
+            <div class="d-flex flex-row flex-wrap">
+                <div class="container w-25 me-5"><img src="<%= product.imageUrl %>" class="w-100" alt="<%= product.title %>"></div>
+                <div class="pt-auto pb-auto flex-grow-1 height-100 align-self-end">
+                    <h1 class="mb-3 display-3"><%= product.title %> </h5>
+                    <p class="mb-5 pb-5"><%= product.description %></p>
+                    <ul class="list-group list-group-flush mt-5">
+                        <li class="list-group-item display-6">$<%= product.price %></li>
+                    </ul>
+                    <div class="ms-auto flex-shrink-1" style="padding: 8px;">
+                        <%- include('../includes/prove04-add-to-cart.ejs') %> 
+                    </div>
+                </div>
+            </div>
+        </main>
+        <%- include('../includes/end.ejs') %>

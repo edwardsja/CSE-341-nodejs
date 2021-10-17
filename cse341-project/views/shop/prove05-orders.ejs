@@ -1,0 +1,27 @@
+<%- include('../includes/head.ejs') %>
+    </head>
+
+    <body>
+        <header>
+            <%- include('../includes/navigation.ejs') %>
+            <%- include('../includes/pageTitle.ejs') %> 
+        </header>
+        <main class="container w-50">
+            <% if (orders.length <= 0) { %>
+                <h1>Nothing there!</h1>
+            <% } else { %>
+                <ul>
+                    <% orders.forEach(order => { %>
+                        <li class="card">
+                            <h1 class="card-header">Order - # <%= order._id %></h1>
+                            <ul class="list-group list-group-flush">
+                                <% order.products.forEach(p => { %>
+                                    <li class="list-group-item"><%= p.product.title %> (<%= p.quantity %>)</li>
+                                <% }); %>
+                            </ul>
+                        </li>
+                    <% }); %>
+                </ul>
+            <% } %>
+        </main>
+        <%- include('../includes/end.ejs') %>

@@ -1,0 +1,28 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/product.css">
+</head>
+
+<body>
+    <header>
+        <%- include('../includes/navigation.ejs') %>
+        <%- include('../includes/pageTitle.ejs') %> 
+    </header>
+
+    <main class="container" >
+        <% if (errorMessage) { %> 
+        <div class="text-center"><%= errorMessage %></div>
+        <% } %>
+        <form class="container w-75" action="/week5/login" method="POST">
+            <div class="mb-3">
+                <label for="email">Email</label>
+                <input class="form-control" type="text" name="email" id="email">
+            </div>
+            <div class="mb-3">
+                <label for="password">Password</label>
+                <input class="form-control" type="text" name="password" id="password">
+            </div>
+            <input type="hidden" value="<%= csrfToken %>" name="_csrf">
+            <button class="btn btn-primary" type="submit">Login</button>
+        </form>
+    </main>
+<%- include('../includes/end.ejs') %>
