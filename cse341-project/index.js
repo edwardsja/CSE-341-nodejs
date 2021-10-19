@@ -73,17 +73,20 @@ app
     //     .catch(err => {
     //         console.log(err);
     //     })
-        if (!req.session.user) {
-          return next();
+      if (!req.session.user) {
+        return next();
       }
       User.findById(req.session.user._id)
           .then(user => {
               req.user = user;
-              next();
+              console.log(req.session);
+              console.log(req.user);
+              next(); 
           })
           .catch(err => {
               console.log(err);
           })
+        
   })
   .use((req, res, next) => {
     res.locals.isAuthenticated = req.session.isLoggedIn;

@@ -50,7 +50,7 @@ exports.postLogin = (req, res, next) => {
             bcrypt.compare(password, user.password)
             .then(doMatch => {
                     if (doMatch) {
-                        req.user = user;
+                        req.session.user = user;
                         req.session.isLoggedIn = true;
                         return req.session.save(err => {
                             console.log(err);

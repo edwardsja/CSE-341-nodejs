@@ -47,7 +47,12 @@
               <li><a class="dropdown-item <%= path === '/week5/login' ? 'active' : ''%>" href="/week5/login">Login</a></li>
               <li><a class="dropdown-item <%= path === '/week5/signup' ? 'active' : ''%>" href="/week5/signup">Signup</a></li>
             <% } else { %>
-              <li><a class="dropdown-item <%= path === '/week5/logout' ? 'active' : ''%>" href="/week5/logout">Logout</a></li>
+              <li>
+                <form action="/week5/logout" method="POST">
+                    <input type="hidden" value="<%= csrfToken %>" name="_csrf">
+                    <button class="btn dropdown-item" type="submit">Logout</button>
+                </form>
+            </li>
             <% } %> 
             <% if (isAuthenticated) { %>
             <li><hr class="dropdown-divider"></li>

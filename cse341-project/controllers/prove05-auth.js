@@ -50,7 +50,7 @@ exports.postLogin = (req, res, next) => {
             bcrypt.compare(password, user.password)
             .then(doMatch => {
                     if (doMatch) {
-                        req.user = user;
+                        req.session.user = user;
                         req.session.isLoggedIn = true;
                         return req.session.save(err => {
                             console.log(err);
@@ -104,7 +104,6 @@ exports.postSignup = (req, res, next) => {
 };
 
 exports.postLogout = (req, res, next) => {
-    console.log('made it to postLogout');
     req.session.destroy(err => {
         console.log(err);
         res.redirect('/week5');
